@@ -16,6 +16,11 @@ const colorScale = scaleLinear()
   .domain([0.29, 0.68])
   .range(["#ffedea", "#ff5233"]);
 
+const dataTest = {
+  "USA": 0.5,
+  "VNM": 0.8
+}
+
 const MapChart = () => {
   const [data, setData] = useState([]);
 
@@ -38,12 +43,12 @@ const MapChart = () => {
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map(geo => {
-              const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
+              const d = dataTest[geo.properties.ISO_A3];
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={d ? colorScale(d["2017"]) : "#F5F4F6"}
+                  fill={d ? colorScale(0.5) : "#F5F4F6"}
                 />
               );
             })
