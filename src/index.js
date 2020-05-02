@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-import MapChart from "./MapChart";
+import MapChart from "./MapChartContinent";
 
 function App() {
   return (
